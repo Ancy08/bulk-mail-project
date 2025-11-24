@@ -18,23 +18,18 @@ function Signup() {
     }
 
     return (
-        <div className="bg-violet-500 text-center items-center">
+        <div className=" text-center items-center">
             <div >
-                <h1 className="text-2xl text-white font-medium px-5 py-3 mb-4">Sign Up</h1>
+                <h1 className="text-2xl w-auto text-blue-800 font-medium px-5 py-3 mt-5 mb-4">Sign Up</h1>
 
             </div>
-            <div className="bg-violet-400 flex flex-col items-center p-6 mt-3">
+            <div className=" flex flex-col items-center p-6 mt-3">
 
                 <input placeholder="username" value={user} className="w-[80%] text-black outline-none p-2 border border-black rounded-md mb-5" onChange={(e) => setUser(e.target.value)}></input>
                 <input placeholder="password" value={pass} className="w-[80%]  text-black outline-none p-2 border border-black rounded-md mb-5" onChange={(e) => setpass(e.target.value)}></input>
-                <button type="" className="bg-blue-700 p-2 w-fit mb-7 text-white font-medium rounded-md " onClick={signupUser}>SignUp</button>
+                <button  className="bg-blue-700 p-2 w-fit mb-7 text-white font-medium rounded-md " onClick={signupUser}>SignUp</button>
             </div>
-            <div className="bg-violet-300 text-white text-center p-8">
-
-            </div>
-            <div className="bg-violet-400 text-white text-center p-8">
-
-            </div>
+            
 
         </div>
     )
