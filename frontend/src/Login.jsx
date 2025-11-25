@@ -34,7 +34,7 @@ function Login() {
 
     return (
         <div className="text-center items-center">
-            <h1 className="text-2xl  text-violet-600 font-medium px-5 py-3 mb-4">LogIn</h1>
+            <h1 className="text-2xl  text-violet-600 font-medium px-5 mt-3 py-3 mb-4">LogIn</h1>
             <div className="flex flex-col items-center p-6 mt-3">
                 <input placeholder="username" value={user}  className="w-[80%] text-black outline-none p-2 border border-black rounded-md mb-5"  onChange={(e) => setUser(e.target.value)}></input>
                 <input placeholder="password" value={pass} className="w-[80%] text-black outline-none p-2 border border-black rounded-md mb-5"  onChange={(e) => setpass(e.target.value)}></input>
