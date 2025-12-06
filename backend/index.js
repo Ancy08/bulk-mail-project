@@ -6,7 +6,7 @@ app.use(cors())
 // middleware
 app.use(express.json())
 // mongo db connection
-mongoose.connect("mongodb://127.0.0.1:27017/passkey").then(function () { console.log("connected to db") }).catch(function () { console.log("Cannot connect to db") })
+mongoose.connect("mongodb+srv://Ancy3008:Ancy3008@cluster0.gpwabxp.mongodb.net/passkey?retryWrites=true&w=majority").then(function () { console.log("connected to db") }).catch(function () { console.log("Cannot connect to db") })
 const emailSchema = new mongoose.Schema({
     subject: String,
     body: String,
