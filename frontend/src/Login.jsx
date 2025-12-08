@@ -13,7 +13,7 @@ function Login() {
         signInWithEmailAndPassword(auth, user, pass).then(() => {
             console.log("User loggedin")
             Navigate("/home")
-        
+
         }).catch(() => {
             console.log("User Failed to login")
             alert("Invalid email or password");
@@ -21,26 +21,26 @@ function Login() {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth,function (user) {
+        onAuthStateChanged(auth, function (user) {
             if (user) {
                 console.log("Logged In")
-               
+
             }
             else {
                 console.log('Logged out')
             }
         })
-    },[])
+    }, [])
 
     return (
-        <div className="text-center items-center">
-            <h1 className="text-2xl  text-violet-600 font-medium px-5 mt-3 py-3 mb-4">LogIn</h1>
+        <div className="bg-black flex flex-col justify-center min-h-screen text-center items-center">
+            <h1 className="text-2xl  text-green-800 font-medium px-5 mt-3 py-3 mb-4">LogIn</h1>
             <div className="flex flex-col items-center p-6 mt-3">
-                <input placeholder="username" value={user}  className="w-[80%] text-black outline-none p-2 border border-black rounded-md mb-5"  onChange={(e) => setUser(e.target.value)}></input>
-                <input placeholder="password" value={pass} className="w-[80%] text-black outline-none p-2 border border-black rounded-md mb-5"  onChange={(e) => setpass(e.target.value)}></input>
-                <button  className="bg-blue-700 p-2 w-fit mb-7 text-white font-medium rounded-md " onClick={loginUser}>Login</button>
+                <input placeholder="username" value={user} className="w-full text-black outline-none p-2 border border-green-500 rounded-md mb-5" onChange={(e) => setUser(e.target.value)}></input>
+                <input placeholder="password" value={pass} className="w-full text-black outline-none p-2 border border-green-500 rounded-md mb-5" onChange={(e) => setpass(e.target.value)}></input>
+                <button className="bg-green-700 p-2 w-fit mb-7 text-black font-medium rounded-md " onClick={loginUser}>Login</button>
             </div>
-             
+
 
         </div>
     )

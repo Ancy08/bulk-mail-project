@@ -38,7 +38,7 @@ function App() {
   // send function
   const send = () => {
     setstatus(true)
-    axios.post("http://localhost:3000/sendmail", { msg: msg, sub: sub, emailList: emailList })
+    axios.post("https://passkey.onrender.com/sendmail", { msg: msg, sub: sub, emailList: emailList })
       .then(function (data) {
         if (data.data === true) {
           alert("Email sent successfully")
@@ -50,7 +50,7 @@ function App() {
       })
   }
   function fetchHistory() {
-    axios.get("http://localhost:3000/history")
+    axios.get("https://passkey.onrender.com/history")
       .then(res => {
         sethistory(res.data)
         setshowHistory(true)
@@ -58,25 +58,25 @@ function App() {
   }
 
   return (
-    <div>
-      <div className="bg-violet-950 text-white text-center">
+    <div className="bg-black min-h-screen">
+      <div className="bg-black text-green-600 text-center">
         <h1 className="text-2xl font-medium px-5 py-3">BulkMail</h1>
       </div>
-      <div className="bg-violet-800 text-white text-center">
+      <div className="bg-gray-950 text-green-400 text-center">
         <h1 className="font-medium px-5 py-3">We will help your business by sending multiple email at once</h1>
       </div>
-      <div className="bg-violet-600 text-white text-center">
+      <div className="bg-black text-green-600 text-center">
         <h1 className="font-medium px-5 py-3">Drag and Drop</h1>
       </div>
-      <div className="bg-violet-400 flex flex-col items-center text-black p-2">
-        <input onChange={handleSub} value={sub} className="w-[80%] outline-none p-2 border border-black rounded-md mb-5" placeholder="Enter email subject here" type="text"></input>
-        <textarea onChange={handleMsg} value={msg} className="h-32 w-[80%] outline-none p-2 border border-black rounded-md" placeholder="Enter email body here"></textarea>
-        <input onChange={handleFile} type="file" className="border-4 border-dashed p-4 mt-5 mb-5"></input>
+      <div className="bg-gray-850 flex flex-col items-center text-black p-2">
+        <input onChange={handleSub} value={sub} className="w-[80%] outline-none p-2 bg-gray-900 border border-green-600 rounded-md mb-5" placeholder="Enter email subject here" type="text"></input>
+        <textarea onChange={handleMsg} value={msg} className="h-32 w-[80%] outline-none p-2 border bg-gray-900 border-green-600 rounded-md" placeholder="Enter email body here"></textarea>
+        <input onChange={handleFile} type="file" className="border-green-900 border-4 text-white border-dashed p-4 mt-5 mb-5"></input>
         <p>Total number of emails:{emailList.length}</p>
-        <button onClick={send} className="bg-blue-700 p-2 w-fit text-white font-medium rounded-md ">{status ? "sending..." : "Send"}</button>
+        <button onClick={send} className="bg-green-700 p-2 w-fit text-black font-medium rounded-md ">{status ? "sending..." : "Send"}</button>
       </div>
-      <div className="bg-violet-300 text-white text-center p-8">
-        <button onClick={fetchHistory} className="bg-blue-700 p-2 w-fit text-white font-medium rounded-md ">View Email History</button>
+      <div className="text-white text-center p-8">
+        <button onClick={fetchHistory} className="bg-green-700 p-2 w-fit text-black font-medium rounded-md ">View Email History</button>
         {showHistory && (
           <div className="p-4 w-[80%] mt-4 mx-auto rounded-md shadow-md bg-white text-black">
             <h2 className="text-xl font-bold mb-3">Email History</h2>
@@ -99,7 +99,7 @@ function App() {
       </div>
 
 
-      <div className="bg-violet-200 text-white text-center p-8">
+      <div className="bg-gray-950 text-white text-center p-8">
 
       </div>
     </div>
