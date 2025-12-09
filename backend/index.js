@@ -2,7 +2,16 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const mongoose = require("mongoose")
-app.use(cors())
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://bulk-mail-project-eta.vercel.app",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+
+app.options("*", cors());
+
 // middleware
 app.use(express.json())
 // mongo db connection
