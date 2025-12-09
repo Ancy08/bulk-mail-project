@@ -68,7 +68,7 @@ function App() {
       <div className="bg-black text-green-600 text-center">
         <h1 className="font-medium px-5 py-3">Drag and Drop</h1>
       </div>
-      <div className="bg-gray-850 flex flex-col items-center text-black p-2">
+      <div className="bg-gray-850 flex flex-col items-center text-white p-2">
         <input onChange={handleSub} value={sub} className="w-[80%] outline-none p-2 bg-gray-900 border border-green-600 rounded-md mb-5" placeholder="Enter email subject here" type="text"></input>
         <textarea onChange={handleMsg} value={msg} className="h-32 w-[80%] outline-none p-2 border bg-gray-900 border-green-600 rounded-md" placeholder="Enter email body here"></textarea>
         <input onChange={handleFile} type="file" className="border-green-900 border-4 text-white border-dashed p-4 mt-5 mb-5"></input>
