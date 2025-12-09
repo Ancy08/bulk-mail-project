@@ -10,7 +10,7 @@ app.use(cors())
 // middleware
 app.use(express.json())
 // mongo db connection
-mongoose.connect("mongodb+srv://maria35699_db_user:Maria@30082000@cluster0.ggbqkiz.mongodb.net/?appName=Cluster0").then(function () { console.log("connected to db") }).catch(function () { console.log("Cannot connect to db") })
+mongoose.connect("mongodb+srv://maria35699_db_user:Maria38@cluster0.ggbqkiz.mongodb.net/?appName=Cluster0").then(function () { console.log("connected to db") }).catch(function () { console.log("Cannot connect to db") })
 const emailSchema = new mongoose.Schema({
     subject: String,
     body: String,
