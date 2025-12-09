@@ -41,8 +41,12 @@ app.post("/sendmail", async function (req, res) {
     var emailList = req.body.emailList
 
     // to access collection from db
-    const credential = mongoose.model("credential", {}, "bulkmail")
+    const credential = mongoose.model("credential",new mongoose.Schema({},{strict: false}), "bulkmail")
     const data = await credential.find()
+    if (!emailList || emailList.length === 0) {
+    return res.status(400).send(false)
+}
+
     if(!data.length){
         console.log("No credentials found")
         return res.send(false)
