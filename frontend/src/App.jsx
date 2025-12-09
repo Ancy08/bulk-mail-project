@@ -38,7 +38,7 @@ function App() {
   // send function
   const send = () => {
     setstatus(true)
-    axios.post("https://passkey.onrender.com/sendmail", { msg: msg, sub: sub, emailList: emailList })
+    axios.post("http://localhost:3000/sendmail", { msg: msg, sub: sub, emailList: emailList })
       .then(function (data) {
         if (data.data === true) {
           alert("Email sent successfully")
@@ -50,7 +50,7 @@ function App() {
       })
   }
   function fetchHistory() {
-    axios.get("https://passkey.onrender.com/history")
+    axios.get("http://localhost:3000/history")
       .then(res => {
         sethistory(res.data)
         setshowHistory(true)

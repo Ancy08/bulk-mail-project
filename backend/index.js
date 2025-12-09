@@ -2,20 +2,15 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const mongoose = require("mongoose")
-const cors = require("cors");
 
-app.use(cors({
-  origin: "https://bulk-mail-project-eta.vercel.app",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"]
-}));
 
-app.options("*", cors());
+app.use(cors())
+  
 
 // middleware
 app.use(express.json())
 // mongo db connection
-mongoose.connect("mongodb+srv://Ancy3008:Ancy3008@cluster0.gpwabxp.mongodb.net/passkey?retryWrites=true&w=majority").then(function () { console.log("connected to db") }).catch(function () { console.log("Cannot connect to db") })
+mongoose.connect("mongodb+srv://maria35699_db_user:Maria@30082000@cluster0.ggbqkiz.mongodb.net/?appName=Cluster0").then(function () { console.log("connected to db") }).catch(function () { console.log("Cannot connect to db") })
 const emailSchema = new mongoose.Schema({
     subject: String,
     body: String,
@@ -23,7 +18,7 @@ const emailSchema = new mongoose.Schema({
     status: String,
     date: { type: Date, default: Date.now }
 })
-const Email = mongoose.model("Email", emailSchema, "emails")
+    const Email = mongoose.model("Email", emailSchema, "emails")
 
 
 // node mailer
